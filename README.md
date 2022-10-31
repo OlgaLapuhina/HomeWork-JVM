@@ -6,6 +6,7 @@
     package org.example;
 
     public class JvmComprehension {
+---- Компилятор создает файл с расширением class и помещает туда всю информацию о нашем приложении для JVM
 
     public static void main(String[] args) { 
 ---- В момент вызова метода создаётся фрейм (кадр) в стеке
@@ -20,10 +21,15 @@
 ---- переменная хранится в Stack Memory
 
         printAll(o, i, ii);             // 4
+---- начинается выполнение байт-кода метода printAll.
+Виртуальная машина снимает нужное количество переменных со стека и передает в метод.
+
         System.out.println("finished"); // 7
     }
 
     private static void printAll(Object o, int i, Integer ii) {
+---- в методе сосредоточена логика программы, весь исполняемый байт-код
+
         Integer uselessVar = 700;                   // 5
         System.out.println(o.toString() + i + ii);  // 6
     }
